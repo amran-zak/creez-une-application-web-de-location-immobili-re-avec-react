@@ -1,5 +1,40 @@
+@use "../../styles/variables" as v;
+
 .footer {
-  margin-top: 48px;
-  background: #000; color: #fff;
-  padding: 32px; text-align: center;
+  background: #000;
+  color: #fff;
+  margin-top: clamp(24px, 3vw, 48px);
+}
+
+.inner {
+  max-width: v.$container;
+  margin: 0 auto;
+  padding: 40px 16px;            /* Desktop */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+/* CONTRÔLE STRICT DU LOGO */
+.logo {
+  width: 122px;                  /* valeur Figma desktop ~120px */
+  height: auto;
+  display: block;
+}
+
+/* Texte */
+.legal {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+  opacity: .95;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .inner { padding: 58px 16px; } /* bloc un peu plus haut comme la maquette */
+  .logo { width: 90px; }         /* logo plus petit */
+  .legal { font-size: 12px; }
 }

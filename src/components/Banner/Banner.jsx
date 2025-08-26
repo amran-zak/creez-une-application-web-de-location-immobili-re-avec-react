@@ -1,11 +1,5 @@
 import styles from "./Banner.module.scss";
 
-/**
- * Props:
- * - image?: string (optionnelle)
- * - title?: string
- * - overlay?: boolean (par défaut true)
- */
 export default function Banner({ image, title, overlay = true }) {
   return (
     <div
@@ -15,7 +9,11 @@ export default function Banner({ image, title, overlay = true }) {
       aria-label={title || "Bannière"}
     >
       {overlay && <div className={styles.overlay} aria-hidden="true" />}
-      {title && <h1 className={styles.title}>{title}</h1>}
+      {title && (
+        <div className={styles.inner}>
+          <h1 className={styles.title}>{title}</h1>
+        </div>
+      )}
     </div>
   );
 }

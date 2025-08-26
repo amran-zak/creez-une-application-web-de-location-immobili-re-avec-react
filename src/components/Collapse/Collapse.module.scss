@@ -1,0 +1,36 @@
+@use "../../styles/variables" as *;
+
+$primary: #ff6060;
+
+.collapse { margin: 16px 0; }
+
+.header {
+  width: 100%;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 16px;
+  background: $primary; color: #fff;
+  border: 0; cursor: pointer; border-radius: $radius;
+  font-size: 16px; font-weight: 600;
+}
+
+.title { text-align: left; }
+.icon  { display: inline-grid; transition: transform .25s ease; }
+.open .icon { transform: rotate(180deg); }
+
+/* Etat fermé par défaut */
+.content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  background: #f7f7f7;
+  border-radius: 0 0 $radius $radius;
+  transition: max-height .3s ease, opacity .2s ease;
+  /* retire le margin-top négatif si tu l’avais, il peut “révéler” le contenu */
+}
+
+.open .content {
+  max-height: 800px; /* assez grand pour ton contenu */
+  opacity: 1;
+}
+
+.inner { padding: 16px; color: #333; line-height: 1.5; }

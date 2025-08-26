@@ -1,0 +1,22 @@
+@use "../../styles/variables" as *;
+
+.header { background:#fff; border-bottom:1px solid #eee; }
+.inner { max-width:1200px; margin:0 auto; padding:16px;
+  display:flex; align-items:center; justify-content:space-between; }
+
+.logo { font-weight:800; font-size:24px; letter-spacing:1px; }
+.nav { display:flex; gap:24px; }
+
+.link {
+  position: relative;
+  color:#333; text-decoration:none; font-weight:500; padding-bottom:4px;
+}
+.link::after {
+  content:"";
+  position:absolute; left:0; right:0; bottom:-2px; height:2px;
+  background:#000000;       /* adapte à ta palette */
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .2s ease;
+}
+.active::after { transform:scaleX(1); }  /* barre visible sur l’actif */

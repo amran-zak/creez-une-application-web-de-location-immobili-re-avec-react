@@ -1,0 +1,38 @@
+@use "../../styles/variables" as v;
+$primary: #ff6060;
+
+.wrapper {
+  /* occupe toute la zone du <main> */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* ESPACEMENT VERTICAL ENTRE LES ÉLÉMENTS */
+  gap: clamp(24px, 12vh, 96px);   // ↑ gros espace comme la maquette
+  padding: clamp(16px, 4vh, 32px) 16px;
+  text-align: center;
+}
+
+.code {
+  margin: 0;                      // on laisse gap gérer l'écart
+  color: $primary;
+  font-weight: 700;
+  line-height: 1;
+  font-size: clamp(56px, 20vw, 288px);
+}
+
+.text {
+  margin: 0;
+  color: $primary;
+  font-size: clamp(14px, 2.6vw, 24px);
+  font-weight: 500;
+}
+
+.back {
+  margin: 0;
+  color: #000;
+  text-decoration: underline;
+  font-size: clamp(12px, 1.6vw, 16px);
+}

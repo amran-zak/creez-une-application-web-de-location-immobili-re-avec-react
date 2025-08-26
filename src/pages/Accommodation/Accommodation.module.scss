@@ -1,0 +1,62 @@
+@use "../../styles/variables" as v;
+
+$page-gap: clamp(16px, 2vw, 24px);
+
+.page { margin-top: 24px; }
+
+.header {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 16px;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+  }
+}
+
+.left { display: grid; gap: 8px; }
+
+.title { margin: 0; color: #ff6060; font-weight: 600; font-size: clamp(20px, 2.6vw, 36px); }
+.location { margin: 0; color: #000; font-size: 14px; opacity: .85; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+
+.right {
+  /* desktop : pile Host au-dessus du Rating alignés à droite */
+  display: grid;
+  gap: 12px;
+  justify-items: end;
+  align-content: center;
+}
+
+/* Collapses : 2 colonnes desktop, 1 colonne mobile */
+.panels {
+  margin-top: $page-gap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $page-gap;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.equipList {
+  margin: 0; padding-left: 18px;
+  li { margin: 4px 0; }
+}
+
+@media (max-width: 900px) {
+  .right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 12px;
+  }
+  .rating { order: 1; } /* gauche */
+  .host   { order: 2; } /* droite */
+}

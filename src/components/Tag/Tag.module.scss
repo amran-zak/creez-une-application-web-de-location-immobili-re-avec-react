@@ -1,0 +1,11 @@
+@use "../../styles/variables" as *;
+
+.tag {
+  display: inline-block;
+  background: #ff6060;
+  color: #fff;
+  border-radius: 12px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+}

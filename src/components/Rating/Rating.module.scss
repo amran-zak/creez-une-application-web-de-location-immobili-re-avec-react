@@ -1,0 +1,8 @@
+.rating { display: inline-flex; gap: 6px; }
+.filled { fill: #ff6060; }
+.empty  { fill: #e3e3e3; }
+
+@media (max-width: 900px) {
+  .rating { gap: 4px; }
+  .rating svg { width: 16px; height: 16px; } /* étoiles plus petites */
+}
